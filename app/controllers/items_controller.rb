@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  def home
+  def index
     @item = Item.new
     @items = Item.all
   end
@@ -9,28 +9,28 @@ class ItemsController < ApplicationController
     if item_params[:name].blank?
       @item = Item.new
       flash[:error] = "Invalid"
-      render :home and return
+      render :index and return
     end
     if item_params[:price].blank?
       @item = Item.new
       flash[:error] = "Invalid"
-      render :home and return
+      render :index and return
     end
     if item_params[:quantity].blank?
       @item = Item.new
       flash[:error] = "Invalid"
-      render :home and return
+      render :index and return
     end
     if item_params[:shelf_life_days].blank?
       @item = Item.new
       flash[:error] = "Invalid"
-      render :home and return
+      render :index and return
     end
     if !(@item = Item.create(item_params))
     else
       @item = Item.new
     end
-    render :home
+    render :index
   end
 
   private
