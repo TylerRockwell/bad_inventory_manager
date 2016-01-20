@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
   def index
     @item = Item.new
-    @items = Item.all
+    @category = Category.new
+    @category_list = Category.all.map{ |category| [category.name, category.id] }
+    @valid_items = Item.all.select{ |item| item.expires > Date.today }
   end
 
   def create
