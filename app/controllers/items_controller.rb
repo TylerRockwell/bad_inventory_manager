@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @category_list = Category.all_names
+    @item = Item.new
     @valid_items = Item.current_items
   end
 
