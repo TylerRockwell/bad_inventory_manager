@@ -1,0 +1,26 @@
+<p> <%= flash[:error] %> </p>
+
+<%= render 'form' %>
+
+<%= render '/categories/form' %>
+
+<table class='table table-bordered'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Expires</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @valid_items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td>$<%= item.price_in_us_dollars %></td>
+      <td><%= item.quantity %></td>
+      <td><%= item.expires %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
