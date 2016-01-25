@@ -1,5 +1,5 @@
 <p>
-  <%= form_for Item.new, html: { class: 'form-inline' } do |f| %>
+  <%= form_for @item, html: { class: 'form-inline' } do |f| %>
     <div class='form-group'>
       <%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
     </div>
@@ -13,7 +13,7 @@
       <%= f.text_field :shelf_life_days, placeholder: 'Expires in (days)', type: 'number', class: 'form-control' %>
     </div>
     <div class='form-group'>
-      <%= f.select :category, @category_list, {include_blank: true}, class: 'form-control' %>
+      <%= f.collection_select :category, @item.category_options, :id, :name, {include_blank: true}, class: 'form-control' %>
     </div>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>

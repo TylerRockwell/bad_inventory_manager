@@ -17,4 +17,8 @@ class Item < ActiveRecord::Base
   def price_to_us_dollars
     Money.us_dollar(price)
   end
+
+  def category_options
+    Category.all
+  end
 end
