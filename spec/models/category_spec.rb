@@ -7,7 +7,7 @@ RSpec.describe Category, type: :model do
 
   describe ".all_names" do
     let!(:category) { create(:category) }
-    it "should return an nested arrays of category names and ids" do
+    it "should return a nested arrays of category names and ids" do
       expect(Category.all_names).to eq([[category.name, category.id]])
     end
   end
