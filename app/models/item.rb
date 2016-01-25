@@ -14,7 +14,7 @@ class Item < ActiveRecord::Base
     select{ |item| item.expires > Date.today }
   end
 
-  def price_in_us_dollars
+  def price_to_us_dollars
     Money.us_dollar(price)
   end
 end
