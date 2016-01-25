@@ -4,4 +4,8 @@ class Item < ActiveRecord::Base
   def expires
     Date.today + shelf_life_days.days
   end
+
+  def price_to_us_dollars
+    Money.us_dollar(price)
+  end
 end
