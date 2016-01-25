@@ -21,10 +21,10 @@ RSpec.describe Item, type: :model do
     end
   end
 
-  describe "#price_in_us_dollars" do
+  describe "#price_to_us_dollars" do
     let(:item) { create(:item) }
     it "should return price formatted as US Dollars" do
-      expect(item.price_in_us_dollars).to eq(Money.us_dollar(item.price))
+      expect(item.price_to_us_dollars).to eq(Money.us_dollar(item.price))
     end
   end
 end
